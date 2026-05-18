@@ -3,6 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --font-title: var(--font-cormorant);
+  --font-body: var(--font-noto);
+}
+
+.title-font {
+  font-family: var(--font-title);
+}
+
+.body-font {
+  font-family: var(--font-body);
 }
 
 @theme inline {
@@ -24,3 +35,44 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.petal {
+  position: absolute;
+  top: -40px;
+
+  background: #ffb7c5;
+
+  border-radius: 70% 0 70% 0;
+
+  opacity: 0.8;
+
+  animation-name: falling;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  filter: blur(0.5px);
+}
+
+@keyframes falling {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate3d(20px, 25vh, 0) rotate(90deg);
+  }
+
+  50% {
+    transform: translate3d(-20px, 50vh, 0) rotate(180deg);
+  }
+
+  75% {
+    transform: translate3d(20px, 75vh, 0) rotate(270deg);
+  }
+
+  100% {
+    transform: translate3d(-20px, 110vh, 0) rotate(360deg);
+  }
+}
+
+
