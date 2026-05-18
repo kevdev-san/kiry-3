@@ -104,10 +104,11 @@ const DECO_PHOTOS = [
 const LINE_DURATION = 3.8;
 
 // GIFs con posición fija: alternan izquierda/derecha por orden de aparición
-const gifsWithSide = LYRICS.filter((l) => l.gif !== null).map((l, i) => ({
-  gif: l.gif!,
-  side: i % 2 === 0 ? "left" : "right",
-}));
+const gifsWithSide: { gif: string; side: "left" | "right" }[] =
+  LYRICS.filter((l) => l.gif !== null).map((l, i) => ({
+    gif: l.gif!,
+    side: i % 2 === 0 ? "left" : "right",
+  }));
 const gifSideMap: Record<string, "left" | "right"> = {};
 gifsWithSide.forEach(({ gif, side }) => { gifSideMap[gif] = side; });
 

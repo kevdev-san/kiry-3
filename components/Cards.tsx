@@ -237,7 +237,7 @@ export default function Letters() {
               animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, scale: 0.92, y: 24, filter: "blur(8px)" }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="relative w-full max-w-md"
             >
               {/* Botón cerrar */}
